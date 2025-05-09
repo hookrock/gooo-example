@@ -1,0 +1,3 @@
+[submodule "gooo"]
+	path = gooo
+	url = git@github.com:hookrock/gooo.git
