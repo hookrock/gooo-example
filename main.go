@@ -1,13 +1,13 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
+	"github.com/hookrock/gooo"
 )
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(w, "Hello, world!")
+	r := gooo.Default()
+	r.GET("/", func(c *gooo.Context) {
+		c.View("index.tmpl", nil)
 	})
-	http.ListenAndServe(":8080", nil)
+	r.Run()
 }
